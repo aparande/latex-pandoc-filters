@@ -9,3 +9,4 @@ from .section_label_filter import SectionLabelFilter
 from .cref_filter import CrefFilter
 from .display_math_filter import DisplayMathFilter
 from .latex_cleanup_filter import LatexCleanupFilter
+from .div_cleanup_filter import DivCleanupFilter
