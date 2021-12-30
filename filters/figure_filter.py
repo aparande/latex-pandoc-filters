@@ -1,6 +1,6 @@
 import sys
 from abc import ABC, abstractmethod
-from typing import Any
+from typing import Any, NamedTuple
 
 import re
 from pandocfilters import Para, Image, Str
@@ -8,6 +8,9 @@ from pandocfilters import Para, Image, Str
 from ..utils import convert_to_image
 from ..pandoc_state import PandocState
 from .pandoc_filter import PandocFilter
+
+class FigureEnv(NamedTuple):
+  name: str
 
 class FigureFilter(PandocFilter):
   def __init__(self, config, state: PandocState):
@@ -18,7 +21,10 @@ class FigureFilter(PandocFilter):
     self.cache_prefix = config['cache_prefix']
 
     self.state.labels["fig"] = []
+    self.state.envs["fig"] = FigureEnv("Figure")
+
     self.state.labels["table"] = []
+    self.state.envs["table"] = FigureEnv("Table")
 
   def convert_algorithm(self, fmt, code):
     figure_code = "\n".join(code.split("\n")[1:-1])
