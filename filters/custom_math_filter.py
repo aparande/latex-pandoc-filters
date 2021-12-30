@@ -1,4 +1,4 @@
-import re
+import regex as re
 import sys
 from typing import Any, List, NamedTuple, Dict
 
