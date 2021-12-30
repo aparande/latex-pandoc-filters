@@ -7,3 +7,4 @@ from .figure_filter import FigureFilter
 from .unit_filter import UnitFilter
 from .section_label_filter import SectionLabelFilter
 from .cref_filter import CrefFilter
+from .display_math_filter import DisplayMathFilter
