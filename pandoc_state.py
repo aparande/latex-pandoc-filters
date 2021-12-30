@@ -6,4 +6,5 @@ class PandocState(NamedTuple):
   """
   labels: Dict[str, List[str]] = {}
   envs: Dict = {}
+  sections: Dict = {}
 
